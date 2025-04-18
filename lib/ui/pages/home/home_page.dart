@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                       ),
+                      padding: EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
