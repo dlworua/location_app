@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:location_app/ui/pages/detail/detail_page.dart';
 
 class HomePage extends StatelessWidget {
   TextEditingController textEditingController = TextEditingController();
@@ -41,29 +42,41 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: ListView(
                   children: [
-                    Container(
-                      width: double.infinity,
-                      height: 120,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                      ),
-                      padding: EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '코엑스아쿠아리움',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ), //title
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return DetailPage();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                        ),
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '코엑스아쿠아리움',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ), //title
 
-                          Text('문화,예술>컨벤션센터'), //category
-                          Text('서울특별시 강남구 영동대로 513'), //roadAddress
-                        ],
+                            Text('문화,예술>컨벤션센터'), //category
+                            Text('서울특별시 강남구 영동대로 513'), //roadAddress
+                          ],
+                        ),
                       ),
                     ),
                   ],
