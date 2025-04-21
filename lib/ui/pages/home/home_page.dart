@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:location_app/ui/pages/detail/detail_page.dart';
 
 class HomePage extends StatelessWidget {
   TextEditingController textEditingController = TextEditingController();
@@ -41,6 +42,18 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: ListView(
                   children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return DetailPage();
+                            },
+                          ),
+                        );
+                      },
+                    ),
                     Container(
                       width: double.infinity,
                       height: 120,
