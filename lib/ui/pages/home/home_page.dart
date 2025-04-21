@@ -62,16 +62,25 @@ class HomePage extends StatelessWidget {
                         final location = state.locations[index];
                         return GestureDetector(
                           onTap: () {
-                            // 디테일 페이지로 로케이션에 링크보내주기
-                            // 페이지 이동시 데이터 전달
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return DetailPage(link: location.link);
-                                },
-                              ),
-                            );
+                            // 링크가 비어있을 때 페이지 이동이 되지않도록 하기
+                            if (location.link != null &&
+                                location.link.isNotEmpty) {
+                              // 디테일 페이지로 로케이션에 링크보내주기
+                              // 페이지 이동시 데이터 전달
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return DetailPage(link: location.link);
+                                  },
+                                ),
+                              );
+                            } else {
+                              // 사용자에게 알려주기
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('이 장소는 링크 정보가 없습니다.')),
+                              );
+                            }
                           },
                           child: Container(
                             width: double.infinity,
