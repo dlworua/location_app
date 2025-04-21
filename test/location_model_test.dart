@@ -22,9 +22,9 @@ void main() {
     Map<String, dynamic> map = jsonDecode(dummyData);
     // 2. 객체로 변환
     Location location = Location.formJson(map);
-    expect(
-      location.mapx,
-      '1270625320',
-    ); // 객체가 잘 변환되는지 확인하기 위해 expect함수사용 expect(실제값, 기대값);
+    // 객체가 잘 변환되는지 확인하기 위해 expect함수사용 expect(실제값, 기대값);
+    expect(location.mapx, '1270625320');
+    // print 함수이용하여 location.toJson 호출하여 정상적으로 Json으로 바뀌었는지 확인
+    print(location.toJson());
   });
 }
