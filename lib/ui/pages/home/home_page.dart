@@ -9,8 +9,9 @@ class HomePage extends StatelessWidget {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: Colors.purple[50],
+        backgroundColor: const Color.fromARGB(255, 247, 238, 249),
         appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 247, 238, 249),
           title: TextField(
             maxLines: 1,
             controller: textEditingController,
@@ -52,9 +53,16 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('코엑스'), //title
+                          Text(
+                            '코엑스아쿠아리움',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ), //title
+
                           Text('문화,예술>컨벤션센터'), //category
-                          Text('서울특별시 강남구 영동대로 513'), //address
+                          Text('서울특별시 강남구 영동대로 513'), //roadAddress
                         ],
                       ),
                     ),
