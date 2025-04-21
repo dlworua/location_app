@@ -63,8 +63,11 @@ class HomePage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             // 링크가 비어있을 때 페이지 이동이 되지않도록 하기
-                            if (location.link != null &&
-                                location.link.isNotEmpty) {
+                            if (location.link.trim().isEmpty) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('이동할 링크가 없습니다')),
+                              );
+                              return;
                               // 디테일 페이지로 로케이션에 링크보내주기
                               // 페이지 이동시 데이터 전달
                               Navigator.push(
