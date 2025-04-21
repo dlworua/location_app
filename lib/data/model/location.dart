@@ -32,4 +32,19 @@ class Location {
     required this.mapx,
     required this.mapy,
   });
+  // 1. fromJson 생성자 만들기 (중요* 클래스 안에 넣기!)
+  Location.formJson(Map<String, dynamic> map)
+    : this(
+        title: map['title'],
+        link: map['link'],
+        category: map['category'],
+        description: map['description'],
+        telephone: map['telephone'],
+        address: map['address'],
+        roadAddress: map['roadAddress'],
+        mapx: map['mapx'],
+        mapy: map['mapy'],
+      );
+
+  // 2. toJson 생성자 만들기
 }
