@@ -1,4 +1,5 @@
 // 1. 상태 클래스 만들기
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:location_app/data/model/location.dart';
 import 'package:location_app/data/repository/location_repository.dart';
@@ -15,7 +16,7 @@ class HomeViewModel extends Notifier<HomeState> {
     return HomeState([]);
   }
 
-  void searchLocations(String query) async {
+  Future<void> searchLocations(String query) async {
     final locationRepository = LocationRepository();
     final locations = await locationRepository.searchLocations(query);
     state = HomeState(locations);
