@@ -47,4 +47,17 @@ class Location {
       );
 
   // 2. toJson 생성자 만들기
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'link': link,
+      'category': category,
+      'description': description,
+      'telephone': telephone,
+      'address': address,
+      'roadAddress': roadAddress,
+      'mapx': mapx,
+      'mapy': mapy,
+    };
+  }
 }
